@@ -1,9 +1,8 @@
 <!--pages/index/index.wxml-->
-<view>
-  <image src="/images/nvsheng.jpg"></image>
-  <text>Lemon</text>
-
-  <view>
+<view class="indexContianer">
+  <image class="avatarUrl" src="/images/fengjing.jpg"></image>
+  <text class="username">{{message}}</text>
+  <view class="goLearn" catchtap="toLogs">
     <text>学习小程序</text>
   </view>
 </view>

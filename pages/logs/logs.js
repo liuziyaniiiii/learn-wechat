@@ -1,32 +1,18 @@
-// pages/index/index.js
+// pages/logs/logs.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    message:'初始化'
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      message:'修改后的数据'
-    })
-  },
 
-  // handleParent(){
-  //   console.log('parent')
-  // },
-  // handleChild(){
-  //   console.log('child')
-  // },
-  toLogs(){
-    wx.redirectTo({
-      url: '/pages/logs/logs',
-    })
   },
 
   /**

@@ -2,18 +2,30 @@
 Page({
 
   /**
-   * 页面的初始数据
+   * 页面的初始数据,页面中使用的数据都需要问data要
    */
   data: {
-    message:'初始化'
+    message:'初始化',
+    userInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      message:'修改后的数据'
+    // this.setData({
+    //   message:'修改后的数据',
+    // })
+    wx.getUserInfo({
+      success:(res)=>{
+        // console.log(res)
+        this.setData({
+          userInfo:res.userInfo
+        })
+      },
+      fail:()=>{
+        console.log('获取用户信息失败')
+      }
     })
   },
 
@@ -27,6 +39,14 @@ Page({
     wx.redirectTo({
       url: '/pages/logs/logs',
     })
+  },
+  handleUserInfo(res){
+    if(res.detail.userInfo){
+      // console.log(res)
+      this.setData({
+        userInfo:res.detail.userInfo
+      })
+    }
   },
 
   /**

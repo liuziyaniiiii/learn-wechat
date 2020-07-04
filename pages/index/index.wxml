@@ -1,7 +1,8 @@
 <!--pages/index/index.wxml-->
 <view class="indexContianer">
-  <image class="avatarUrl" src="/images/fengjing.jpg"></image>
-  <text class="username">{{message}}</text>
+  <image wx:if='{{userInfo.avatarUrl}}' class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+  <button wx:else open-type="getUserInfo" bindgetuserinfo="handleUserInfo">获取用户信息</button>
+  <text class="username">{{userInfo.nickName}}</text>
   <view class="goLearn" catchtap="toLogs">
     <text>学习小程序</text>
   </view>

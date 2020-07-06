@@ -13,9 +13,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('---index onload()')
     // this.setData({
     //   message:'修改后的数据',
     // })
+    // 再用户授权之后的情况下,获取用户信息
     wx.getUserInfo({
       success:(res)=>{
         // console.log(res)
@@ -40,6 +42,8 @@ Page({
       url: '/pages/logs/logs',
     })
   },
+
+  // 获取用户授权信息的回调
   handleUserInfo(res){
     if(res.detail.userInfo){
       // console.log(res)
@@ -60,21 +64,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log('---onShow页面显示--')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log('---onHide页面隐藏---')
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('---onUnload页面卸载---')
   },
 
   /**
